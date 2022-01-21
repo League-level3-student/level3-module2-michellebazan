@@ -19,30 +19,30 @@ public class _01_SortedArrayCheckerTest {
         assertTrue(_01_SortedArrayChecker.intArraySorted(sorted));
     }
 
-//    @Test
-//    public void doubleArraySortTest() {
-//        double[] unsorted = {3, 2, 9, 3, 1, 0};
-//        double[] sorted = {0, 1, 2, 2, 3, 4};
+    @Test
+    public void doubleArraySortTest() {
+        double[] unsorted = {3, 2, 9, 3, 1, 0};
+        double[] sorted = {0, 1, 2, 2, 3, 4};
 //
-//        assertFalse(_01_SortedArrayChecker.doubleArraySorted(unsorted));
-//        assertTrue(_01_SortedArrayChecker.doubleArraySorted(sorted));
-//    }
+        assertFalse(_01_SortedArrayChecker.doubleArraySorted(unsorted));
+        assertTrue(_01_SortedArrayChecker.doubleArraySorted(sorted));
+    }
 //
-//    @Test
-//    public void charArraySortTest() {
-//        char[] unsorted = {'c', 'F', 'p', 'A'};
-//        char[] sorted = {'a', 'b', 'c', 'd', 'e'};
+    @Test
+    public void charArraySortTest() {
+        char[] unsorted = {'c', 'F', 'p', 'A'};
+        char[] sorted = {'a', 'b', 'c', 'd', 'e'};
+
+        assertFalse(_01_SortedArrayChecker.charArraySorted(unsorted));
+        assertTrue(_01_SortedArrayChecker.charArraySorted(sorted));
+    }
 //
-//        assertFalse(_01_SortedArrayChecker.charArraySorted(unsorted));
-//        assertTrue(_01_SortedArrayChecker.charArraySorted(sorted));
-//    }
-//
-//    @Test
-//    public void stringArraySortTest() {
-//        String[] unsorted = {"carrot", "pineapple", "mango", "pear"};
-//        String[] sorted = {"apple", "banana", "carrot", "grape"};
-//
-//        assertFalse(_01_SortedArrayChecker.stringArraySorted(unsorted));
-//        assertTrue(_01_SortedArrayChecker.stringArraySorted(sorted));
-//    }
+    @Test
+    public void stringArraySortTest() {
+        String[] unsorted = {"carrot", "pineapple", "mango", "pear"};
+        String[] sorted = {"apple", "banana", "carrot", "grape"};
+
+        assertFalse(_01_SortedArrayChecker.stringArraySorted(unsorted));
+        assertTrue(_01_SortedArrayChecker.stringArraySorted(sorted));
+    }
 }
