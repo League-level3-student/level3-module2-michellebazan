@@ -18,30 +18,29 @@ public class BogoSorter extends Sorter {
 	 */
 	@Override
 	void sort(int[] array, SortingVisualizer display) {
-		int check = 0;
-		while (check == 0) {
-			check = 0;
-			for (int i = 0; i < array.length; i++) {
-				for (int k = 0; k < array.length; k++) {
-					if (array[k] > array[k + 1]) {
-						check = 1;
+
+		for (int i = 0; i < array.length; i++) {
+			for (int k = 0; k < array.length; k++) {
+				if (array[k] > array[k + 1]) {
+
+					Random rand = new Random();
+					int x = rand.nextInt();
+					int y = rand.nextInt();
+					while (x == y) {
+						x = rand.nextInt(array.length);
+						y = rand.nextInt(array.length);
 					}
+					int temp = array[x];
+					array[x] = array[y];
+					array[y] = temp;
+
+					
+				} else {
+					System.out.println("Finished");
 				}
 			}
-			if (check == 1) {
-				Random rand = new Random();
-				int x = rand.nextInt();
-				int y = rand.nextInt();
-				while (x == y) {
-					x = rand.nextInt(array.length);
-					y = rand.nextInt(array.length);
-				}
-
-				int temp = array[x];
-				array[x] = array[y];
-				array[y] = temp;
-
-			}
+			display.updateDisplay();
 		}
+
 	}
 }

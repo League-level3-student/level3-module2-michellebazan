@@ -41,20 +41,27 @@ public class ThanosSorter extends Sorter {
 	@Override
 	void sort(int[] arr, SortingVisualizer display) {
 		int max = arr.length - 1;
+		int min = 0;
 		for (int i = 0; i < max; i++) {
-			if (arr[i] > arr[i++]) {
+			if (arr[i] > arr[i+1]) {
 				Random rand = new Random();
 				int randy = rand.nextInt(2);
 				if (randy == 0) {
-					for (int first = 0; first < max / 2; first++) {
+					//min = 0;
+					max = max/2;
+					for (int first = min; first < max; first++) {
 						arr[first] = 0;
 					}
 				} else {
-					for (int second = max / 2; second < max; max++) {
+					min = max/2;
+					
+					for (int second = min; second < max; max++) {
 						arr[second] = 0;
 					}
 				}
 			}
+			display.updateDisplay();
+
 		}
 	}
 }
