@@ -40,28 +40,49 @@ public class ThanosSorter extends Sorter {
 	 */
 	@Override
 	void sort(int[] arr, SortingVisualizer display) {
-		int max = arr.length - 1;
+
+		int max = arr.length;
 		int min = 0;
-		for (int i = 0; i < max; i++) {
-			if (arr[i] > arr[i+1]) {
-				Random rand = new Random();
-				int randy = rand.nextInt(2);
-				if (randy == 0) {
-					//min = 0;
-					max = max/2;
-					for (int first = min; first < max; first++) {
-						arr[first] = 0;
-					}
-				} else {
-					min = max/2;
-					
-					for (int second = min; second < max; max++) {
-						arr[second] = 0;
-					}
+		boolean isOrdered = false;
+		int orange = 0;
+
+		while (isOrdered == false) {
+			for (int i = min; i < max - 1; i++) {
+				if (arr[i] > arr[i + 1]) {
+					orange++;
 				}
 			}
-			display.updateDisplay();
+
+			if (orange >= 0) {
+				//System.out.println("I am.. Inevitable");
+				orange = 0;
+
+				Random rand = new Random();
+				int randy = rand.nextInt(2);
+//i need to fix min and max lol... it is infinite loop
+				if (randy == 1) {
+					//second half
+					min = (max) / 2;
+					max = arr.length;
+					for (int k = min; k < max; k++) {
+						arr[k] = 0;
+					}
+				} else {
+					//first half
+					max = (max) / 2;
+					min = 0;
+					for (int q = min; q < max; q++) {
+						arr[q] = 0;
+					}
+				}
+				display.updateDisplay();
+			} else {
+				System.out.println("Perfectly balanced, as all things should be");
+				isOrdered = true;
+				display.updateDisplay();
+			}
 
 		}
+
 	}
 }
