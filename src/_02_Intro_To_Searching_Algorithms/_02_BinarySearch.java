@@ -11,7 +11,11 @@ public class _02_BinarySearch {
      * binarySearch method will take in two extra integer parameters
      * to define the start and end position of the search.
      */
-
+/*
+	public static void main(String[] args) {
+		int[] eggs = new int[] {2,3,4,5,6};
+		System.out.println(binarySearch(eggs, 2, 6, 3));
+	}*/
     // 1. Complete the steps in the binarySearch method.
     //    We can assume array is already sorted
     public static int binarySearch(int[] array, int start, int end, int value) {
@@ -31,12 +35,11 @@ public class _02_BinarySearch {
             //    binarySearch method. Pass in start and mid - 1
             //    for the end variable.
     		if(array[mid] > value) {
-    			//then return the value returned from a call to the 
-                //    binarySearch method???????
+    			return binarySearch(array, start, mid -1, value);
     		}
             // 6. return the value returned from a call to the binarySearch
             //    method. Use mid + 1 as the start, and pass in end.
-    		//i think you call binaray search within binary search
+    		return binarySearch(array, mid+1, end, value);
     	}
         // 7. return -1 because the value was not found
         return -1;
